@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+  Options +FollowSymLinks
+  RewriteEngine On
+	
+	#Полный редирект браузеров Internet Explorer
+	RewriteCond %{REQUEST_URI} !=/old-browser.html
+	RewriteCond %{HTTP_USER_AGENT} .*Trident.* [OR]
+	RewriteCond %{HTTP_USER_AGENT} .*MSIE.*	
+	RewriteRule .+?\.(php|html)$ old-browser.html [L]
+</IfModule>
