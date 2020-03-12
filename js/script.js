@@ -1,16 +1,24 @@
-﻿$('.menu-btn').click(function(){
+﻿$('.file-field__input').change(function(){
+	if(this.value){
+		$(this).siblings('.file-field__label').text(this.files[0].name);
+	}else{
+		$(this).siblings('.file-field__label').text('');
+	}
+})
+$('.menu-btn').click(function(){
 	$(this).toggleClass('menu-btn--active');
 	$('.header__menu').toggleClass('header__menu--open');
 })
-$('.header__menu a[href^="#"]').click(function(e){
+$('.header__menu a[href^="#"]').not('[data-fancybox]').click(function(e){
 	e.preventDefault();
-	var target = $(this.hash),
-			top = target.offset().top;
-	if(innerWidth < 1320){
-		top -= $('.header').outerHeight()
-	}
+	var target = $(this.hash);
 	
-	if(target.length){		
+	if(target.length){
+		var top = target.offset().top;
+		if(innerWidth < 1320){
+			top -= $('.header').outerHeight()
+		}
+		
 		$('html,body').animate({
 			scrollTop: top
 		},500,function(){
@@ -22,6 +30,10 @@ $('.header__menu a[href^="#"]').click(function(e){
 		$('.header__menu').removeClass('header__menu--open');
 	}
 })
+$(document).on('afterShow.fb', function(e,instance,slide){
+	$('.menu-btn').removeClass('menu-btn--active');
+	$('.header__menu').removeClass('header__menu--open');
+});
 
 //Навигация по странице
 function pageNav(entries, observer){

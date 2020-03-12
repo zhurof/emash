@@ -40,6 +40,7 @@ body
 	flex-wrap: wrap
 	font: normal normal 16px/normal "Gotham Pro",sans-serif
 	letter-spacing: -0.01em
+	min-width: 320px
 
 img,
 iframe,
@@ -48,6 +49,7 @@ video
 	user-select: none
 	
 a
+	display: inline-block
 	color: inherit
 	text-decoration: none
 
@@ -71,11 +73,29 @@ p
 /*элементы форм*/
 input,textarea,button,select
 	font: inherit
-	color: inherit	
+	color: inherit
+	min-width: 0
 	
 textarea
 	resize: none
 	overflow: auto
+	
+[type=text],
+[type=tel],
+[type=email],
+[type=url],
+[type=password],
+textarea
+	display: block
+	width: 100%
+	border: 1px solid $yellow
+	font-size: 16px
+	line-height: normal
+	padding: 10px 20px
+	border-radius: 20px
+	margin: 0 0 15px
+	&:last-child
+		margin-bottom: 0
 	
 //select
 	appearance: none
@@ -98,6 +118,25 @@ textarea
 		appearance: none
 		margin: 0
 		
+.file-field
+	display: block
+	margin: 0 0 15px
+	position: relative
+	&:last-child
+		margin-bottom: 0
+	&__input
+		margin: 0
+		width: 1px
+		height: 1px
+		opacity: 1
+		position: absolute
+		z-index: -1
+	&__label
+		display: block
+		cursor: pointer
+		text-decoration: underline
+		&:empty:before
+			content: 'Выберите файл'
 /*кнопки*/
 button,
 [type=submit],
@@ -108,6 +147,7 @@ button,
 	appearance: none
 	display: inline-block
 	vertical-align: top
+	border: none
 	background: linear-gradient(to bottom, $yellow, $orange)
 	padding: 12px 40px
 	text-align: center
@@ -173,7 +213,16 @@ ul,ol
 	display: flex
 	flex-wrap: wrap
 	margin: 0 -15px
-
+/*модальные окна*/
+.modal
+	display: none
+	width: 350px
+	max-width: 100%
+	padding: 30px 40px
+	border-radius: 10px
+	&__title
+		text-align: center
+		font-size: 26px
 /*ШАПКА*/
 .logo
 	display: block
@@ -203,7 +252,7 @@ ul,ol
 	line-height: 22/18*1
 	&__inner
 		position: sticky
-		top: 90px
+		top: 40px
 	&__logo
 		margin: 0 0 40px
 		&:last-child
@@ -330,7 +379,14 @@ ul,ol
 		margin: 0 auto 1em
 	&__footer
 		text-align: center
-
+.calc
+	padding: 50px 0 90px
+	background: url(../img/bg/2.jpg) no-repeat center/cover
+	color: #fff
+	&__title
+		max-width: 850px
+		margin: 0 auto 1em
+		text-align: center
 		
 .schema
 	padding: 50px 0
@@ -347,7 +403,7 @@ ul,ol
 		border: 2px solid $yellow
 		padding: 20px 10px
 		margin: 0 15px 30px
-		width: calc(20% - 30px)
+		width: 210px
 		flex: 1 1 auto
 		text-align: center
 		&:after
@@ -382,7 +438,7 @@ ul,ol
 			&--small
 				font-size: 18px
 	&__column
-		margin: 0 15px
+		margin: 0 15px 15px
 		flex: 1 1 auto
 	&__subtitle
 		font-size: 22px
@@ -439,9 +495,72 @@ ul,ol
 			font-weight: inherit		
 	&__footer
 		text-align: center
-		
-			
-	
+.work-card
+	display: flex
+	background-color: #fff
+	border: 2px solid $orange
+	padding: 14px 20px 20px
+	margin: 0 15px 30px
+	&__head
+		width: 230px
+	&__pseudo-title
+		font-size: 18px
+		line-height: 21/18*1
+		font-weight: bold
+		max-height: 42/18*1em
+		overflow: hidden
+		margin: 0 0 .5em
+		&:last-child
+			margin-bottom: 0
+	&__pic
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		img
+			display: block
+			width: 100%
+			+obj
+			&:nth-child(n+2)
+				width: calc(50% - 9px)
+				margin-top: 18px
+	&__body
+		display: none
+		width: 280px
+		padding-left: 30px
+	&__title
+		font-size: 22px
+		line-height: 25/22*1
+		margin: 0 0 .4em
+	&__field
+		margin: 0 0 .25em
+		&:last-child
+			margin-bottom: 0
+	&__key
+		font-weight: bold
+		display: inline-flex
+		align-items: baseline
+		min-width: 130px
+		&:after
+			content: ''
+			display: inline-block
+			flex: 1 1 auto
+			border-bottom: 2px dotted
+	&__date
+		font-size: 20px
+		line-height: 1
+		font-weight: bold
+		margin: .6em 0 1.1em
+		&:first-child
+			margin-top: 0
+		&:last-child
+			margin-bottom: 0
+.portfolio
+	padding: 40px 0
+	background: url(../img/bg/5.jpg) no-repeat center/cover
+	&__title
+		text-align: center
+	&__box
+		justify-content: center	
 .soc-link
 	display: inline-block
 	font-weight: 400
@@ -518,5 +637,11 @@ ul,ol
 			text-align: center
 		&:nth-child(3n)
 			text-align: right
+/*Анимации*/
+@keyframes fadeIn
+	from
+		opacity: 0
+	to
+		opacity: 1
 /*АДАПТИВ*/
 @import "adaptive"
