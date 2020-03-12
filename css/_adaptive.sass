@@ -4,23 +4,205 @@
 		&:hover
 			background: linear-gradient(to top, $yellow, $orange)
 	.header
-		&__menu
+		&__nav
 			>li
-				&:hover
+				&:hover,
+				&.active
 					>a
 						background-color: $orange
 						font-size: 22px
 						line-height: 28/22*1
+	.gallery
+		&__item
+			transition: all .15s linear
+			&:hover
+				margin-top: 0
+				width: 370px
 				
-@media(max-width:1199px)
+@media(max-width: 1629px)
+	.wrapper
+		padding: 0 30px
+		max-width: 1020px
+	.main
+		&:before
+			background: repeating-linear-gradient(to right,rgba(255,255,255,.15) 0,rgba(255,255,255,.15) 1px, transparent 1px, transparent 240px) no-repeat 30px 0
+	.top-block		
+		&__body
+			padding: 0
+		&__item
+			flex-basis: 210px
+	.catalog
+		&__box
+			justify-content: center
+	.contacts
+		&__body
+			padding-left: 0
+	.footer
+		padding-left: 0
+		&__wrapper
+			max-width: 100%
+			
+@media(max-width: 1319px)
+	body
+		display: block
+		padding-top: 73px
 	.wrapper
 		max-width: 992px
-  
-//@media(max-width:991px)
-	
+		padding: 0 15px
+		margin: 0 auto
+	.logo
+		font-size: 18px
+	.menu-btn
+		display: inline-block
+		cursor: pointer
+		font-size: 32px
+		width: 1em
+		text-align: center
+		transition: all .3s ease
+		&--active
+			color: $orange
+	.header
+		padding: 10px 15px
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 3
+		width: 100%
+		margin: 0
+		&__inner
+			position: static
+			display: flex
+			align-items: center
+			justify-content: space-between
+		&__logo
+			margin: 0 15px 0 0
+		&__menu
+			position: absolute
+			top: 100%
+			right: 0
+			width: 400px
+			max-width: 100%
+			opacity: 0
+			pointer-events: none
+			transition: all .3s ease
+			background-color: #111
+			border-top: 1px solid rgba(255,255,255,.3)
+			padding: 30px 20px
+			text-align: right
+			&--open
+				opacity: 1
+				pointer-events: auto
+		&__nav
+			margin: 0 -20px 30px
+			>li
+				>a
+					padding: 12px 20px
+				&.active
+					>a
+						background-color: $orange
+	.main
+		width: auto
+		&:before
+			background: repeating-linear-gradient(to right,rgba(255,255,255,.15) 0,rgba(255,255,255,.15) 1px, transparent 1px, transparent 248px) no-repeat 0 0
+			left: calc(50% - 481px)
+			width: calc(50% + 481px)		
+	.top-block
+		padding: 75px 0			
+		&__item
+			flex-basis: 218px
+	.contacts
+		&__head
+			padding-left: 0		
+@media(max-width:991px)
+	h1
+		font-size: 32px
+	h2
+		font-size: 27px
+	h3
+		font-size: 20px
+	h4
+		font-size: 16px
+	.main
+		&:before
+			display: none
+	.top-block
+		&__head
+			font-size: 18px
+		&__item
+			transform: none
+			flex-basis: calc(50% - 30px)
+			&:nth-child(2n)
+				align-self: auto
+		&__footer
+			display: block
+			&-column
+				padding: 0
+				margin: 0 auto 20px
+				&:last-child
+					margin-bottom: 0
+	.card
+		&__title
+			font-size: 18px
+	.contacts
+		&__body
+			padding: 0
+		&__map
+			position: static
+			width: auto
+			height: 340px
+			margin: 0 -15px
+		&__text
+			max-width: calc(100% + 30px)
+			max-width: unset
+			margin: 0 -15px
+			font-size: inherit
+	.studio-logo
+		margin: 0 auto
+	.footer
+		padding: 25px 0
+		text-align: center
+		&__box
+			display: block
+			margin: 0
+		&__column
+			width: auto
+			margin: 0 0 20px
+			&:nth-child(n+2)
+				text-align: inherit
+			&:last-child
+				margin-bottom: 0
 
-//@media(max-width:767px)
-	
+@media(max-width:767px)
+	h1
+		font-size: 26px
+	h2
+		font-size: 23px
+	.top-block
+		&__title
+			&:first-line
+				text-transform: inherit
+				font-size: inherit
+		&__item
+			font-size: inherit
 
-//@media(max-width:480px)
+@media(max-width:479px)
+	.header
+		&__menu
+			width: 100%
+			background-color: rgba(0,0,0,.9)
+		&__nav
+			>li
+				border-bottom: 1px solid rgba(255,255,255,.2)
+	.top-block
+		&__box
+			display: block
+			margin: 0
+		&__item
+			margin: 0 0 20px
+			&:last-child
+				margin-bottom: 0
+	.contacts
+		&__text
+			padding: 20px 15px
+		
 	

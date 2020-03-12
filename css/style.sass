@@ -54,6 +54,9 @@ a
 a img
 	border: none
 
+strong
+	font-weight: bold
+	color: $orange
 p
 	margin: 0 0 1em
 	&:last-child
@@ -115,6 +118,8 @@ button,
 	user-select: none
 	color: #000
 	font-family: "Gotham Pro",sans-serif
+	position: relative
+	box-shadow: 0 3px 10px rgba(0,0,0,.15)
 	&--block
 		display: block
 		width: 100%
@@ -123,6 +128,18 @@ button,
 	&--small
 		font-size: 17px
 		padding: 12px 30px
+	&--play
+		padding-left: 70px
+		text-align: left
+		&:before
+			content: ''
+			font-family: "Font Awesome 5 Pro"
+			font-size: 1.6em
+			line-height: 1
+			font-weight: bold
+			position: absolute
+			top: calc(50% - .5em)
+			left: 30px
 
 /*заголовки*/
 h1,h2,h3,h4,h5,h6
@@ -135,7 +152,14 @@ h1
 h2
 	font-size: 36px
 	line-height: 40/36*1
-
+h3
+	font-size: 32px
+	line-height: normal
+	margin: 0 0 .75em
+h4
+	font-size: 20px
+	line-height: normal
+	margin: 0 0 .2em
 /*списки*/
 ul,ol
 	margin: 0 0 1em
@@ -164,6 +188,8 @@ ul,ol
 		color: $yellow
 		font-size: 38/22*1em
 		line-height: 1
+.menu-btn
+	display: none
 .header
 	background-color: #111
 	color: #fff
@@ -175,7 +201,6 @@ ul,ol
 	margin: 0 0 100px
 	font-size: 18px
 	line-height: 22/18*1
-	min-height: 100vh	
 	&__inner
 		position: sticky
 		top: 90px
@@ -183,7 +208,7 @@ ul,ol
 		margin: 0 0 40px
 		&:last-child
 			margin-bottom: 0
-	&__menu
+	&__nav
 		+unlist
 		margin: 0 -35px 35px
 		font-size: 20px
@@ -194,7 +219,7 @@ ul,ol
 			>a
 				display: block
 				padding: 12px 35px
-				transition: background-color .3s ease					
+				transition: background-color .3s ease
 	&__contacts
 		margin: 0 0 1em
 		font-size: 22px		
@@ -209,18 +234,24 @@ ul,ol
 		strong
 			font-weight: inherit
 			color: $yellow
-		
-		
-				
 	
 /*ОСНОВНОЕ СОДЕРЖИМОЕ*/
 .main
 	width: calc(100% - 300px)
 	flex: 1 1 auto
+	position: relative
+	&:before
+		content: ''
+		+pos
+		background: repeating-linear-gradient(to right,rgba(255,255,255,.15) 0,rgba(255,255,255,.15) 1px, transparent 1px, transparent 280px) no-repeat 140px 0
+		pointer-events: none
 .top-block
 	padding: 160px 0 80px
-	background: url(../img/screen1.jpg) no-repeat center/cover
-	color: #fff
+	background: url(../img/bg/0.jpg) no-repeat center/cover
+	color: #fff	
+	&__wrapper
+		position: relative
+		z-index: 1
 	&__head
 		max-width: 920px
 		margin: 0 auto 60px
@@ -235,9 +266,257 @@ ul,ol
 		strong
 			color: $yellow
 			font-weight: inherit
-.contacts
-	width: 100%
-/*ПОДВАЛ*/
+	&__body
+		padding: 0 0 0 60px
+		margin: 0 0 30px
+		&:last-child
+			margin-bottom: 0
+	&__box
+		min-height: 150px
+		align-items: flex-start
+	&__item
+		margin: 0 15px 30px
+		flex: 0 1 250px
+		font-size: 18px
+		line-height: 22/18*1
+		border-left: 3px solid $yellow
+		padding-left: 20px
+		transform: translateX(-1px)
+		&:nth-child(2n)
+			align-self: flex-end
+		strong
+			font-weight: inherit
+	&__footer
+		display: flex
+		flex-wrap: wrap
+		justify-content: center
+		align-items: flex-start
+		font-weight: 500
+		text-align: center
+		&-column
+			padding: 0 15px
+			flex-basis: 325px
+		strong
+			font-size: 20/16*1em
+			color: inherit
+			font-weight: inherit
+	&__btn
+		margin: 10px 0
+		&--video
+			max-width: 275px
+			margin: 0
+.card
+	margin: 0 15px 30px
+	flex-basis: 370px
+	text-align: center
+	cursor: pointer
+	&__img
+		display: block
+		width: 100%
+		height: 150px
+		border: 3px solid $yellow
+		+obj
+		margin: 0 0 6px
+	&__title
+		font-size: 20px
+.catalog
+	padding: 60px 0 30px
+	background: url(../img/bg/1.jpg) no-repeat center/cover
+	position: relative
+	z-index: 1
+	&__title
+		text-align: center
+		max-width: 650px
+		margin: 0 auto 1em
+	&__footer
+		text-align: center
 
+		
+.schema
+	padding: 50px 0
+	background: url(../img/bg/3.jpg) no-repeat center/cover
+	position: relative
+	z-index: 1
+	&__title
+		text-align: center
+	&__inner
+		overflow: hidden
+	&__item
+		position: relative
+		background-color: #fff
+		border: 2px solid $yellow
+		padding: 20px 10px
+		margin: 0 15px 30px
+		width: calc(20% - 30px)
+		flex: 1 1 auto
+		text-align: center
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			width: 30px
+			height: 22.5px
+			left: calc(100% + 2px)
+			top: calc(50% - 11.5px)
+			background: url(../img/icons/arrow-right.svg) no-repeat center/100% 100%
+		&--orange
+			border-color: $orange
+			&:after
+				background-image: url(../img/icons/arrow-right--orange.svg)
+		&--small
+			width: 170px
+			padding: 10px 10px 20px
+		strong
+			font-weight: inherit
+		&-number
+			font-weight: bold
+			color: $orange
+			font-size: 66px
+			line-height: 1
+			&--small
+				font-size: 46px
+		&-title
+			font-size: 20px
+			line-height: normal
+			margin: 0 0 .3em
+			&--small
+				font-size: 18px
+	&__column
+		margin: 0 15px
+		flex: 1 1 auto
+	&__subtitle
+		font-size: 22px
+	&__text
+		font-size: 20px
+		strong
+			color: inherit
+.gallery
+	margin: 0 0 60px
+	&:last-child
+		margin-bottom: 0
+	&__item
+		display: block
+		width: 325px
+		margin: 30px 15px 0
+	&__pic
+		display: block
+		background: url(../img/frame.jpg) no-repeat center/100% 100%
+		padding: 17/325*100%
+	&__caption
+		display: block
+		font-size: 22px
+		margin: .5em 0 0
+.about
+	padding: 40px 0 60px
+	background: url(../img/bg/4.jpg) no-repeat center/cover
+	color: #fff
+	&__title
+		max-width: 1020px
+		text-align: center
+		margin: 0 auto 1em
+		strong
+			color: $yellow
+	&__body
+		padding: 0 0 0 60px
+		margin: 0 0 30px
+		&:last-child
+			margin-bottom: 0
+	&__box
+		min-height: 210px
+		align-items: flex-start
+	&__item
+		margin: 0 15px 30px
+		flex: 0 1 250px
+		font-size: 18px
+		line-height: 22/18*1
+		border-left: 3px solid $yellow
+		padding-left: 20px
+		transform: translateX(-1px)
+		&:nth-child(2n)
+			align-self: flex-end
+		strong
+			display: block
+			font-weight: inherit		
+	&__footer
+		text-align: center
+		
+			
+	
+.soc-link
+	display: inline-block
+	font-weight: 400
+	width: 30px
+	height: 30px
+	line-height: 30px
+	font-size: 18px
+	background-color: #fff
+	border-radius: 50%
+	color: #000
+	text-align: center
+	margin: 5px 3px 0 0
+.contacts
+	padding: 40px 0 0
+	width: 100%
+	&__head
+		margin: 0 0 20px
+		padding-left: 300px
+		&:last-child
+			margin-bottom: 0
+	&__title
+		text-align: center
+	&__body
+		position: relative
+		padding: 100px 0 70px 300px
+	&__map
+		+pos
+		background-color: #ddd
+	&__text
+		position: relative
+		z-index: 1
+		max-width: 410px
+		background-color: #151514
+		border: 2px solid $orange
+		padding: 30px
+		color: #fff
+		font-size: 20px
+		font-weight: bold
+		h3
+			color: $orange
+		h4
+			color: $yellow
+.studio-logo
+	display: flex
+	align-items: center
+	width: 330px
+	max-width: 100%
+	font-size: 14px
+	line-height: 20/14*1
+	font-weight: 300
+	margin-left: auto
+	text-align: right
+	&__text
+		display: block
+		flex: 1 1 auto
+	&__img
+		width: 70px
+		margin-left: 20px
+/*ПОДВАЛ*/
+.footer
+	width: 100%
+	padding: 30px 0 15px 300px
+	font-size: 14px
+	line-height: 20/14*1
+	font-weight: 300
+	letter-spacing: -0.025em
+	&__box
+		justify-content: space-between
+		align-items: center
+	&__column
+		margin: 0 15px 15px
+		width: calc(100% / 3 - 30px)
+		&:nth-child(3n-1)
+			text-align: center
+		&:nth-child(3n)
+			text-align: right
 /*АДАПТИВ*/
 @import "adaptive"

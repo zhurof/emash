@@ -9,42 +9,204 @@
 	<link rel="stylesheet" href="css/fonts.css" />	
 	<link rel="stylesheet" href="css/font-awesome.css" />
 	<link rel="stylesheet" href="libs/slick/slick.css" />
+	<link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 	<header class="header">
 		<div class="header__inner">
 			<a href="/" class="logo header__logo"><strong>АО “КПП”</strong> 20 лет нам доверяют</a>
-			<ul class="header__menu">
-				<li><a href="#">В начало</a></li>
-				<li><a href="#">Поставляемая продукция</a></li>
-				<li class="active"><a href="#">Проверить склад</a></li>
-				<li><a href="#">Оставить заявку</a></li>
-				<li><a href="#">Сертификаты</a></li>
-				<li><a href="#">Текущие отгрузки</a></li>
-			</ul>
-			<div class="header__contacts">
-				<a href="tel:8999999999">Тел. 8 (999) 99-99-99 </a> <br>По РФ бесплатно
+			<span class="far fa-bars menu-btn"></span>
+			<div class="header__menu">
+				<ul class="header__nav">
+					<li><a href="#top">В начало</a></li>
+					<li><a href="#catalog">Поставляемая продукция</a></li>
+					<li><a href="#calc">Проверить склад</a></li>
+					<li><a href="#">Оставить заявку</a></li>
+					<li><a href="#about">Сертификаты</a></li>
+					<li><a href="#last-sells">Текущие отгрузки</a></li>
+				</ul>
+				<div class="header__contacts">
+					<a href="tel:8999999999">Тел. 8 (999) 99-99-99 </a> <br>По РФ бесплатно
+				</div>
+				<div class="header__address">
+					<strong>г. Москва</strong>, Валакамское шоссе, д. 80, оф 10
+				</div>
+				<a href="#" class="btn btn--small btn--block header__btn">Заявка на поковку</a>
 			</div>
-			<div class="header__address">
-				<strong>г. Москва</strong>, Валакамское шоссе, д. 80, оф 10
-			</div>
-			<a href="#" class="btn btn--small btn--block header__btn">Заявка на поковку</a>
 		</div>
 	</header>	
 	<main class="main">
-		<div class="top-block">
+		<div class="top-block page-section" id="top">
 			<div class="wrapper top-block__wrapper">
 				<div class="top-block__head">
 					<h1 class="top-block__title"><strong>АО “КПП”</strong> - поковки по вашему <br>техническому заданию в кратчайшие сроки</h1>
 					<p>20 лет - Нам доверяют крупнейшие предприятия ПВК и космической отрасли России и ЕАС</p>
 				</div>
-				<div class="box top-block__box">
-					<div class="top-block__item">Поковки всех <strong>видов сталей</strong></div>
-					<div class="top-block__item">Поковки с <strong>мех.&nbsp;обработкой</strong></div>
-					<div class="top-block__item">Поковки со всеми <strong>видами приёмок</strong></div>
-					<div class="top-block__item">Центральный офис в Москве, <strong>предприятие в пром. центре РФ</strong></div>
+				<div class="top-block__body">
+					<div class="box top-block__box">
+						<div class="top-block__item">Поковки всех <strong>видов&nbsp;сталей</strong></div>
+						<div class="top-block__item">Поковки с <strong>мех.&nbsp;обработкой</strong></div>
+						<div class="top-block__item">Поковки со всеми <strong>видами приёмок</strong></div>
+						<div class="top-block__item">Центральный офис в Москве, <strong>предприятие в пром. центре РФ</strong></div>
+					</div>
 				</div>
+				<div class="top-block__footer">
+					<div class="top-block__footer-column">
+						<a href="#" class="btn btn--small top-block__btn">Заявка на поковку</a>
+						<p>Или звоните <a href="tel:88002000600"><strong>8 (800) 2000-600</strong></a></p>
+					</div>
+					<div class="top-block__footer-column">
+						<a href="https://www.youtube.com/embed/cqK_VcqtKcY" class="btn btn--small btn--play top-block__btn top-block__btn--video" data-fancybox target="_blank">Посмотреть видео о нашей компани</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="catalog page-section" id="catalog">
+			<div class="wrapper">
+				<h2 class="catalog__title">Производим поковки всех видов и <strong>из любой стали</strong></h2>
+				<div class="box catalog__box">
+					<div class="card" data-fancybox data-src="#order">
+						<img src="img/catalog/0.jpg" alt="" class="card__img">
+						<h3 class="card__title"><strong>Валы гладкого круглого</strong> и прямоугольного сечения</h3>
+					</div>
+					<div class="card" data-fancybox data-src="#order">
+						<img src="img/catalog/1.jpg" alt="" class="card__img">
+						<h3 class="card__title"><strong>Валы круглого сечения</strong> с уступами и фланцами</h3>
+					</div>
+					<div class="card" data-fancybox data-src="#order">
+						<img src="img/catalog/2.jpg" alt="" class="card__img">
+						<h3 class="card__title"><strong>Диски с отверстиями</strong> и без отверстий</h3>
+					</div>
+					<div class="card" data-fancybox data-src="#order">
+						<img src="img/catalog/3.jpg" alt="" class="card__img">
+						<h3 class="card__title"><strong>Раскатные</strong> кольца</h3>
+					</div>
+					<div class="card" data-fancybox data-src="#order">
+						<img src="img/catalog/4.jpg" alt="" class="card__img">
+						<h3 class="card__title"><strong>Цилиндры</strong> с отверстиями</h3>
+					</div>
+					<div class="card" data-fancybox data-src="#order">
+						<img src="img/catalog/5.jpg" alt="" class="card__img">
+						<h3 class="card__title"><strong>Плиты</strong>, штамповые кубики</h3>
+					</div>
+				</div>
+				<div class="catalog__footer">
+					<a href="#" class="btn catalog__btn">Оставить заявку</a>
+				</div>
+			</div>
+		</div>
+		<div class="schema">
+			<div class="wrapper">
+				<h2 class="schema__title"><strong>Схема работы</strong> от заявки до поковки</h2>
+				<div class="schema__inner">
+					<div class="box schema__main">
+						<div class="schema__item">
+							<div class="schema__item-number">01</div>
+							<h4 class="schema__item-title">Заявка</h4>
+							<p>Оставляйте заявку, <strong>через форму на сайте, или по телефону</strong>, высылайте чертеж</p>
+						</div>
+						<div class="schema__item">
+							<div class="schema__item-number">02</div>
+							<h4 class="schema__item-title">Получение КП </h4>
+							<p>На электронную почту через 1-2 дня получаете КП</p>
+						</div>
+						<div class="schema__item">
+							<div class="schema__item-number">03</div>
+							<h4 class="schema__item-title">Согласование</h4>
+							<p>Согласовываем техн. часть: чертежи, механические св-ва, мехобработку и другие детали. Обговариваем время изготовление.</p>
+						</div>
+						<div class="schema__item">
+							<div class="schema__item-number">04</div>
+							<h4 class="schema__item-title">Расчет стоимости</h4>
+							<p>Включает в себя согласование: стоимость поковки, способов поставки, условий оплаты.</p>
+						</div>
+						<div class="schema__item">
+							<div class="schema__item-number">05</div>
+							<h4 class="schema__item-title">Подписание </h4>
+							<p>После заключаем договор и Вы производите предоплату.</p>
+						</div>
+						<div class="schema__column">
+							<h3 class="schema__subtitle">Дополнительные пункты для индивидуальных размеров</h3>
+							<div class="box schema__inner-box">
+								<div class="schema__item schema__item--orange schema__item--small">
+									<div class="schema__item-number schema__item-number--small">06</div>
+									<h4 class="schema__item-title schema__item-title--small">Подготовка металла</h4>
+									<p>Выплавка кузнечного слитка или завоз металлопроката нужной марки.</p>
+								</div>
+								<div class="schema__item schema__item--orange schema__item--small">
+									<div class="schema__item-number schema__item-number--small">07</div>
+									<h4 class="schema__item-title schema__item-title--small">Ковка </h4>
+									<p>Ковка слитка (для прессовых) или круга (для молотовых) и первоначальная термообработка.</p>
+								</div>
+								<div class="schema__item schema__item--orange schema__item--small">
+									<div class="schema__item-number schema__item-number--small">08</div>
+									<h4 class="schema__item-title schema__item-title--small">Доп. обработка</h4>
+									<p>При наличии требование заказчика дополнительная термообработка, мехобработка.</p>
+								</div>
+								<div class="schema__item schema__item--orange schema__item--small">
+									<div class="schema__item-number schema__item-number--small">09</div>
+									<h4 class="schema__item-title schema__item-title--small">Испытания и контроль</h4>
+									<p>Производим механические испытания и ультразвуковой контроль (УЗК).</p>
+								</div>
+							</div>
+							<div class="schema__text">Заявки принимаются по тел. <br><strong><a href="tel:88009999999">8 (800) 999-99-99</a> <br>или <a href="mailto:sale@oakpp.ru">sale@oakpp.ru</a></strong></div>
+						</div>
+						<div class="schema__column">
+							<h3 class="schema__subtitle">Стандартное изделие</h3>
+							<div class="box schema__inner-box">
+								<div class="schema__item schema__item--small">
+									<div class="schema__item-number schema__item-number--small">10</div>
+									<h4 class="schema__item-title schema__item-title--small">Контроль службой ОТК</h4>
+									<p>Перед отгрузкой делаем проверку службой ОТК, на современном оборудовании различными  методами на соответствие припускам ГОСТ, техническому заданию, спецификации.</p>
+								</div>
+								<div class="schema__item schema__item--small">
+									<div class="schema__item-number schema__item-number--small">11</div>
+									<h4 class="schema__item-title schema__item-title--small">Получение заказа</h4>
+									<p>Отгрузка готового изделия заказчику с територии производства или транспортной компаний по адресу закзчика. Итоговая оплата.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="about page-section" id="about">
+			<div class="wrapper">
+				<h2 class="about__title">Поковки от АО “КПП” соответствуют  Тех. заданию, а также <strong>проходят все виды приёмок</strong></h2>
+				<div class="gallery">
+					<div class="box gallery__box">
+						<a href="img/document.jpg" class="gallery__item" data-fancybox="gallery">
+							<span class="gallery__pic"><img src="img/document.jpg" alt=""></span>
+							<span class="gallery__caption">ГАН приёмка</span>
+						</a>
+						<a href="img/document.jpg" class="gallery__item" data-fancybox="gallery">
+							<span class="gallery__pic"><img src="img/document.jpg" alt=""></span>
+							<span class="gallery__caption">ГАН приёмка</span>
+						</a>
+						<a href="img/document.jpg" class="gallery__item" data-fancybox="gallery">
+							<span class="gallery__pic"><img src="img/document.jpg" alt=""></span>
+							<span class="gallery__caption">ГАН приёмка</span>
+						</a>
+					</div>
+				</div>
+				<h2 class="about__title">Почему выбирают <strong>АО “КПП”</strong></h2>
+				<div class="about__body">
+					<div class="box about__box">
+						<div class="about__item"><strong>Любые задачи</strong> Готовы выполнить любые задачи, любой сложности</div>
+						<div class="about__item"><strong>Точно в срок</strong> Мы контролируем сроки изготовления на каждом этапе</div>
+						<div class="about__item"><strong>Сертификаты и приемка</strong> Наши поковки имею все необходимые сертификаты и приёмки</div>
+						<div class="about__item"><strong>Логистика</strong> Готовы отправить поковку сразу по готовности в любую точку </div>
+					</div>
+				</div>
+				<div class="about__footer">
+					<a href="#" class="btn about__btn">Оставить заявку</a>
+				</div>
+			</div>
+		</div>
+		<div class="portfolio page-section" id="last-sells">
+			<div class="wrapper">
+				
 			</div>
 		</div>
 	</main>
@@ -54,12 +216,43 @@
 				<h2 class="contacts__title">Контакты</h2>
 			</div>
 		</div>
+		<div class="contacts__body">
+			<div class="wrapper">				
+				<div class="contacts__text">
+					<h3>Свяжитесь с нами</h3>
+					<h4>Ждем вас по адресу</h4>
+					<p>Россия, Удмуртская республика, г. Ижевск</p>
+					<h4>Напишите нам</h4>
+					<p><a href="mailto:info@info.ru">info@info.ru</a></p>
+					<h4>Телефон</h4>
+					<p><a href="tel:88002000600">8 (800) 2000-600</a></p>
+					<h4 style="color:#eea733">Напишите нам</h4>
+					<a href="#" class="soc-link fab fa-viber"></a>
+					<a href="#" class="soc-link fab fa-whatsapp"></a>
+					<a href="#" class="soc-link fab fa-telegram-plane"></a>
+				</div>
+				<div class="contacts__map" id="map" data-coords="56.852676, 53.206891"></div>
+			</div>
+		</div>
 	</div>
 	<footer class="footer">
-		
+		<div class="wrapper footer__wrapper">
+			<div class="box footer__box">
+				<div class="footer__column">Политикой конфиденциальности и обработки персональных данных <br>Соглашение об использовании сайта</div>
+				<div class="footer__column">© 2019 ООО «Электромаш».</div>
+				<div class="footer__column">
+					<a href="#" class="studio-logo">
+						<span class="studio-logo__text">Kovalchuk Digital <br>- создание и продвижение сайтов, контекстная реклама</span>
+						<img src="img/studio-logo.png" alt="" class="studio-logo__img">
+					</a>
+				</div>
+			</div>
+		</div>
 	</footer>
+	<script src='https://api-maps.yandex.ru/2.1/?lang=ru_RU&#038;ver=1'></script>
 	<script src="libs/jquery/jquery-3.4.1.min.js"></script>
 	<script src="libs/slick/slick.min.js"></script>
+	<script src="libs/fancybox/jquery.fancybox.min.js"></script>
 	<script src="js/script.js"></script>	
 </body>
 </html>
