@@ -47,13 +47,34 @@ $('.page-section').each(function(){
 	var sectionObserver = new IntersectionObserver(pageNav,{threshold: .2, rootMargin: '-70px 0px -50% 0px'});
 	sectionObserver.observe(this);
 })
-
+//Пошаговая форма
+$('.calc__nav-btn--next').click(function(){
+	var stepElement = $(this).closest('.calc__step'),
+			validStep = true;
+	stepElement.find('input,select,textarea').each(function(){
+		if(!this.validity.valid){
+			validStep = false;
+			this.reportValidity();
+		}
+	})
+	console.log(validStep);
+	
+	if(validStep && stepElement.next('.calc__step').length){
+		stepElement.removeClass('calc__step--active').next().addClass('calc__step--active');
+	}
+})
+$('.calc__nav-btn--prev').click(function(){
+	var stepElement = $(this).closest('.calc__step');
+	if(stepElement.prev('.calc__step').length){
+		stepElement.removeClass('calc__step--active').prev().addClass('calc__step--active');
+	}
+})
 //карта
 $('[data-coords][id]').each(function(){
 	var map = this;
-	/* ymaps.ready(function(){
+	ymaps.ready(function(){
 		initMap(map);
-	}); */
+	});
 })
 function initMap(map){
 	var coords = $(map).data('coords').replace(/[^\d\,\.]/g,'').split(',') || [];			

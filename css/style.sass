@@ -36,11 +36,12 @@ html
 body
 	margin: 0
 	padding: 0
-	display: flex
-	flex-wrap: wrap
 	font: normal normal 16px/normal "Gotham Pro",sans-serif
 	letter-spacing: -0.01em
 	min-width: 320px
+	padding: 0 0 0 300px
+	display: flex
+	flex-direction: column
 
 img,
 iframe,
@@ -63,6 +64,29 @@ p
 	margin: 0 0 1em
 	&:last-child
 		margin: 0
+blockquote
+	margin: 0 0 .7em
+	background-color: #2a1401
+	padding: 20px 40px 0
+	border: 2px solid $orange
+	color: #fff
+	position: relative
+	&:last-child
+		margin-bottom: 0
+	&:before,&:after
+		font-size: 86/16*1em
+		line-height: .2
+		display: inline-block
+		color: $orange
+		opacity: .4
+		vertical-align: -0.6em
+	&:before
+		content: '“'
+		position: absolute
+		top: 30px
+		left: 0
+	&:after
+		content: '”'
 
 *:focus
 	outline: none
@@ -85,6 +109,7 @@ textarea
 [type=email],
 [type=url],
 [type=password],
+[type=search],
 textarea
 	display: block
 	width: 100%
@@ -94,6 +119,8 @@ textarea
 	padding: 10px 20px
 	border-radius: 20px
 	margin: 0 0 15px
+	background-color: #fff
+	color: #000
 	&:last-child
 		margin-bottom: 0
 	
@@ -104,7 +131,7 @@ textarea
 	&::-ms-expand
 		display: none
 		
-//[type=search]
+[type=search]
 	&::-webkit-search-decoration,
 	&::-webkit-search-cancel-button,
 	&::-webkit-search-results-button,
@@ -119,7 +146,9 @@ textarea
 		margin: 0
 		
 .file-field
-	display: block
+	display: flex
+	flex-wrap: wrap
+	align-items: center
 	margin: 0 0 15px
 	position: relative
 	&:last-child
@@ -132,11 +161,15 @@ textarea
 		position: absolute
 		z-index: -1
 	&__label
-		display: block
+		display: inline-block
+		vertical-align: middle
+		margin: .7em 1.2em .7em 0
 		cursor: pointer
 		text-decoration: underline
-		&:empty:before
-			content: 'Выберите файл'
+		&:empty
+			display: none
+	&__btn
+		vertical-align: middle
 /*кнопки*/
 button,
 [type=submit],
@@ -160,6 +193,15 @@ button,
 	font-family: "Gotham Pro",sans-serif
 	position: relative
 	box-shadow: 0 3px 10px rgba(0,0,0,.15)
+	&--stroke
+		background: none
+		box-shadow: none
+		&:after
+			content: ''
+			+pos
+			border: 2px solid $yellow
+			border-radius: inherit
+			transition: inherit
 	&--block
 		display: block
 		width: 100%
@@ -167,7 +209,7 @@ button,
 		padding-right: 10px
 	&--small
 		font-size: 17px
-		padding: 12px 30px
+		padding: 10.5px 30px
 	&--play
 		padding-left: 70px
 		text-align: left
@@ -180,6 +222,10 @@ button,
 			position: absolute
 			top: calc(50% - .5em)
 			left: 30px
+	&[disabled]
+		cursor: not-allowed
+		pointer-events: none
+		color: gray
 
 /*заголовки*/
 h1,h2,h3,h4,h5,h6
@@ -243,16 +289,15 @@ ul,ol
 	background-color: #111
 	color: #fff
 	font-family: ProximaNova, sans-serif
+	position: fixed
+	top: 0
+	left: 0
 	width: 300px
-	flex: 0 0 auto
-	position: relative
+	height: 100%
+	overflow: auto
 	padding: 90px 35px
-	margin: 0 0 100px
 	font-size: 18px
 	line-height: 22/18*1
-	&__inner
-		position: sticky
-		top: 40px
 	&__logo
 		margin: 0 0 40px
 		&:last-child
@@ -286,7 +331,6 @@ ul,ol
 	
 /*ОСНОВНОЕ СОДЕРЖИМОЕ*/
 .main
-	width: calc(100% - 300px)
 	flex: 1 1 auto
 	position: relative
 	&:before
@@ -379,15 +423,93 @@ ul,ol
 		margin: 0 auto 1em
 	&__footer
 		text-align: center
+.search-form
+	&__inner
+		display: flex
+		position: relative
+		margin: 0 0 8px
+		&:before
+			content: ''
+			font: normal normal 21px/1 "Font Awesome 5 Pro"
+			display: inline-block
+			position: absolute
+			top: calc(50% - .5em)
+			left: 17px
+			color: #ddd
+			pointer-events: none			
+	&__input
+		flex: 1 1 auto
+		border-top-right-radius: 0
+		border-bottom-right-radius: 0
+		margin: 0
+		padding-left: 50px
+	&__btn
+		flex: 0 0 auto
+		border-bottom-left-radius: 0
+		border-top-left-radius: 0
+	&__note
+		color: #757575
+	&__result
+		font-size: 20px
+		font-weight: bold
+		margin: 1em 0 0
+		&:first-child
+			margin-top: 0
+.person
+	position: relative
+	padding: 35px 60px 20px 10px
+	&__img
+		position: absolute
+		bottom: -3px
+		right: -32px
+		width: 245px
+		z-index: 1
+	&__quote
+		padding-right: 130px
+	&__text
+		text-align: right
+		padding-right: 175px		
 .calc
 	padding: 50px 0 90px
 	background: url(../img/bg/2.jpg) no-repeat center/cover
 	color: #fff
+	overflow: hidden
 	&__title
 		max-width: 850px
 		margin: 0 auto 1em
 		text-align: center
-		
+	&__form
+		border: 2px solid $orange
+		background: url(../img/bg/calc.jpg) no-repeat center/cover
+		color: #000
+	&__step
+		display: none
+		align-items: flex-start
+		animation: fadeIn .5s ease
+		&--active
+			display: flex
+	&__step-title
+		font-size: 22px
+	&__main
+		padding: 30px
+		width: 55%
+	&__text
+		width: 45%
+		padding: 40px 20px 20px		
+		&--simple
+			padding: 0
+			align-self: flex-end
+			
+	&__nav
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		justify-content: space-between
+		margin: 35px 0 0
+		&:first-child
+			margin-top: 0
+		&-btn
+			min-width: 235px		
 .schema
 	padding: 50px 0
 	background: url(../img/bg/3.jpg) no-repeat center/cover
@@ -578,14 +700,13 @@ ul,ol
 	width: 100%
 	&__head
 		margin: 0 0 20px
-		padding-left: 300px
 		&:last-child
 			margin-bottom: 0
 	&__title
 		text-align: center
 	&__body
 		position: relative
-		padding: 100px 0 70px 300px
+		padding: 100px 0 70px 0
 	&__map
 		+pos
 		background-color: #ddd
@@ -622,7 +743,7 @@ ul,ol
 /*ПОДВАЛ*/
 .footer
 	width: 100%
-	padding: 30px 0 15px 300px
+	padding: 30px 0 15px
 	font-size: 14px
 	line-height: 20/14*1
 	font-weight: 300

@@ -8,32 +8,29 @@
 	<meta name="viewport" content="width=device-width, shrink-to-fit=no" />	
 	<link rel="stylesheet" href="css/fonts.css" />	
 	<link rel="stylesheet" href="css/font-awesome.css" />
-	<link rel="stylesheet" href="libs/slick/slick.css" />
 	<link rel="stylesheet" href="libs/fancybox/jquery.fancybox.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 	<header class="header">
-		<div class="header__inner">
-			<a href="/" class="logo header__logo"><strong>АО “КПП”</strong> 20 лет нам доверяют</a>
-			<span class="far fa-bars menu-btn"></span>
-			<div class="header__menu">
-				<ul class="header__nav">
-					<li><a href="#top">В начало</a></li>
-					<li><a href="#catalog">Поставляемая продукция</a></li>
-					<li><a href="#calc">Проверить склад</a></li>
-					<li><a href="#order" data-fancybox>Оставить заявку</a></li>
-					<li><a href="#about">Сертификаты</a></li>
-					<li><a href="#last-sells">Текущие отгрузки</a></li>
-				</ul>
-				<div class="header__contacts">
-					<a href="tel:8999999999">Тел. 8 (999) 99-99-99 </a> <br>По РФ бесплатно
-				</div>
-				<div class="header__address">
-					<strong>г. Москва</strong>, Валакамское шоссе, д. 80, оф 10
-				</div>
-				<a href="#order" class="btn btn--small btn--block header__btn" data-fancybox>Заявка на поковку</a>
+		<a href="/" class="logo header__logo"><strong>АО “КПП”</strong> 20 лет нам доверяют</a>
+		<span class="far fa-bars menu-btn"></span>
+		<div class="header__menu">
+			<ul class="header__nav">
+				<li><a href="#top">В начало</a></li>
+				<li><a href="#catalog">Поставляемая продукция</a></li>
+				<li><a href="#calc">Проверить склад</a></li>
+				<li><a href="#order" data-fancybox>Оставить заявку</a></li>
+				<li><a href="#about">Сертификаты</a></li>
+				<li><a href="#last-sells">Текущие отгрузки</a></li>
+			</ul>
+			<div class="header__contacts">
+				<a href="tel:8999999999">Тел. 8 (999) 99-99-99 </a> <br>По РФ бесплатно
 			</div>
+			<div class="header__address">
+				<strong>г. Москва</strong>, Валакамское шоссе, д. 80, оф 10
+			</div>
+			<a href="#order" class="btn btn--small btn--block header__btn" data-fancybox>Заявка на поковку</a>
 		</div>
 	</header>	
 	<main class="main">
@@ -99,6 +96,63 @@
 		<div class="calc page-section" id="calc">
 			<div class="wrapper">
 				<h2 class="calc__title">Проверим склад <strong>или расчитаем стоимость</strong> поковки на заказ онлайн</h2>
+				<form action="" method="post" class="calc__form">
+					<div class="calc__step calc__step--active">
+						<div class="calc__main">
+							<h3 class="calc__step-title">1. Укажите марку стали поковки</h3>
+							<div class="search-form">
+								<div class="search-form__inner">
+									<input type="search" class="search-form__input" list="search-values" required>
+									<button type="button" class="btn btn--small search-form__btn">Найти</button>
+								</div>
+								<datalist id="search-values">
+									<option value="ХН3Т">
+									<option value="30ХГС">
+									<option value="35ХМ">
+									<option value="30ХМ">
+								</datalist>
+								<div class="search-form__note">Например: ХН3Т</div>
+								<div class="search-form__result">На складах найдено: <strong>32 варианта</strong> поковок марки ХН3Т </div>								
+							</div>
+							<div class="calc__nav">
+								<button type="button" class="btn btn--small btn--stroke calc__nav-btn calc__nav-btn--prev" disabled>Назад</button>
+								<button type="button" class="btn btn--small calc__nav-btn calc__nav-btn--next">Следующий шаг</button>
+							</div>
+						</div>
+						<div class="calc__text calc__text--simple">
+							<div class="person">
+								<img src="img/glavniy.png" alt="" class="person__img">
+								<blockquote class="person__quote">Ищите поковку из наличия или под заказ? Заполните форму слева, система подберет поковку из наличия или предложит расчитать стоимость индивидуального заказа</blockquote>
+								<div class="person__text">
+									<h4>Захарченко Дмитрий</h4>
+									<p>Главный по поковкам <br>13 лет</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="calc__step">
+						<div class="calc__main">
+							<h3 class="calc__step-title">2. Lorem ipsum dolor sit amet.</h3>
+							<input type="text" placeholder="Имя" required />
+							<input type="tel" placeholder="Телефон" required />
+							<textarea rows="4" placeholder="Потребность" required></textarea>
+							<label class="file-field">
+								<span class="file-field__label"></span>
+								<input type="file" class="file-field__input" required />
+								<span class="btn btn--small file-field__btn">Загрузить файл</span>
+							</label>
+							<div class="calc__nav">
+								<button type="button" class="btn btn--small btn--stroke calc__nav-btn calc__nav-btn--prev">Назад</button>
+								<button class="btn btn--small calc__nav-btn">Оставить заявку</button>
+							</div>
+						</div>
+						<div class="calc__text">
+							<h4>Lorem ipsum dolor sit amet</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, atque!</p>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil, earum, libero, odit quod tempora quaerat explicabo officiis magnam in pariatur ullam ipsum accusantium aperiam praesentium similique exercitationem voluptatum nobis perspiciatis.</p>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 		<div class="schema">
@@ -294,32 +348,32 @@
 				</div>
 			</div>
 		</div>
-	</main>
-	<div class="contacts">
-		<div class="contacts__head">
-			<div class="wrapper">
-				<h2 class="contacts__title">Контакты</h2>
-			</div>
-		</div>
-		<div class="contacts__body">
-			<div class="wrapper">				
-				<div class="contacts__text">
-					<h3>Свяжитесь с нами</h3>
-					<h4>Ждем вас по адресу</h4>
-					<p>Россия, Удмуртская республика, г. Ижевск</p>
-					<h4>Напишите нам</h4>
-					<p><a href="mailto:info@info.ru">info@info.ru</a></p>
-					<h4>Телефон</h4>
-					<p><a href="tel:88002000600">8 (800) 2000-600</a></p>
-					<h4 style="color:#eea733">Напишите нам</h4>
-					<a href="viber://add?number=88002000600" class="soc-link fab fa-viber"></a>
-					<a href="https://wa.me/88002000600" class="soc-link fab fa-whatsapp"></a>
-					<a href="https://t.me/zeliboba" class="soc-link fab fa-telegram-plane"></a>
+		<div class="contacts">
+			<div class="contacts__head">
+				<div class="wrapper">
+					<h2 class="contacts__title">Контакты</h2>
 				</div>
-				<div class="contacts__map" id="map" data-coords="56.852676, 53.206891"></div>
+			</div>
+			<div class="contacts__body">
+				<div class="wrapper">				
+					<div class="contacts__text">
+						<h3>Свяжитесь с нами</h3>
+						<h4>Ждем вас по адресу</h4>
+						<p>Россия, Удмуртская республика, г. Ижевск</p>
+						<h4>Напишите нам</h4>
+						<p><a href="mailto:info@info.ru">info@info.ru</a></p>
+						<h4>Телефон</h4>
+						<p><a href="tel:88002000600">8 (800) 2000-600</a></p>
+						<h4 style="color:#eea733">Напишите нам</h4>
+						<a href="viber://add?number=88002000600" class="soc-link fab fa-viber"></a>
+						<a href="https://wa.me/88002000600" class="soc-link fab fa-whatsapp"></a>
+						<a href="https://t.me/zeliboba" class="soc-link fab fa-telegram-plane"></a>
+					</div>
+					<div class="contacts__map" id="map" data-coords="56.852676, 53.206891"></div>
+				</div>
 			</div>
 		</div>
-	</div>
+	</main>	
 	<footer class="footer">
 		<div class="wrapper footer__wrapper">
 			<div class="box footer__box">
@@ -336,20 +390,20 @@
 	</footer>
 	<div class="modal" id="order">
 		<h3 class="modal__title">Оставить заявку</h3>
-		<form action="" method="post" class="modal-form">
+		<form action="" method="post" class="modal__form">
 			<input type="text" placeholder="Имя"/>
 			<input type="tel" placeholder="Телефон"/>
 			<textarea placeholder="Описание задания" rows="5"></textarea>
 			<label class="file-field">
 				<span class="file-field__label"></span>
-				<input type="file" class="file-field__input" />
+				<input type="file" class="file-field__input" required />
+				<span class="btn btn--small file-field__btn">Загрузить файл</span>
 			</label>
 			<button class="btn btn--block modal__btn">Отправить заявку</button>
 		</form>
 	</div>
 	<script src='https://api-maps.yandex.ru/2.1/?lang=ru_RU&#038;ver=1'></script>
 	<script src="libs/jquery/jquery-3.4.1.min.js"></script>
-	<script src="libs/slick/slick.min.js"></script>
 	<script src="libs/fancybox/jquery.fancybox.min.js"></script>
 	<script src="js/script.js"></script>	
 </body>
